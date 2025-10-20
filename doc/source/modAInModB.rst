@@ -16,6 +16,8 @@ another module by:
 
 All these steps are contained in the single Python script detailed below.
 
+The script is also available at: <https://github.com/philiprbrenan/siliconCompiler_modAInModB/blob/main/top.py>
+
 The execution of this script can be seen at:
 
 <https://github.com/philiprbrenan/siliconCompiler_modAInModB/actions>
