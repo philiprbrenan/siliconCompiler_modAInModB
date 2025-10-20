@@ -10,7 +10,7 @@ project = 'modAInModB'
 copyright = '2025, Silicon Compiler'
 author = 'Philip R Brenan'
 release = '1'
-master_doc = 'modAInModB'
+master_doc = 'index'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
