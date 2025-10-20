@@ -14,7 +14,11 @@ another module by:
 4. Instantiating the hard macro **A** twice inside a second module **B**
 5. Running the ASIC flow on module **B**
 
-All these steps are contained in the single Python script detailed below:
+All these steps are contained in the single Python script detailed below.
+
+The execution of this script can be seen at:
+
+<https://github.com/philiprbrenan/siliconCompiler_modAInModB/actions>
 
 .. contents::
    :depth: 2
