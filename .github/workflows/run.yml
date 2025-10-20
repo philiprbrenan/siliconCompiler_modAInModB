@@ -1,0 +1,40 @@
+# Test 2025-10-20 at 15:53:38
+
+name: Test
+run-name: siliconCompiler_modAInModB
+
+on:
+  push:
+    paths:
+      - '**/run.yml'
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Code to execute in the docker container to place one synthesized module in another
+      run: |
+        cat <<EOF > top.exec
+        export PATH=/root/.local/bin:$PATH
+        source /app/sc/bin/activate
+        cd /workspace/verilog
+        python3 top.py
+        EOF
+        chmod +x top.exec
+
+    - name: Run Silicon compiler in a docker container
+      run: |
+        docker run --rm -v ".:/workspace/verilog" ghcr.io/philiprbrenan/sc-asic:latest bash -c "bash /workspace/verilog/top.exec"
+
+    - name: Upload all files as artifact
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: results
+        path: .
+        retention-days: 32
