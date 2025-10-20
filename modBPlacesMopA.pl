@@ -23,8 +23,8 @@ my @ext     = qw(.md .pl .py .png .rst);                                        
 say STDERR timeStamp,  " Push to github $repo";
 
 my @files = searchDirectoryTreesForMatchingFiles($home, @ext);                  # Files to upload
-say STDERR "AAAA ", dump(\@files);
    @files = grep {!m(/build/)} @files;                                          # Filter out unwanted files
+say STDERR "AAAA ", dump(\@files);
    @files = changedFiles $shaFile, @files;                                      # Filter out files that have not changed
 
 if (!@files)                                                                    # No new files
