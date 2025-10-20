@@ -17,6 +17,8 @@
 #
 # All these steps are contained in the single Python script detailed below.
 #
+# The script is also available at: <https://github.com/philiprbrenan/siliconCompiler_modAInModB/blob/main/top.py>
+#
 # The execution of this script can be seen at:
 #
 # <https://github.com/philiprbrenan/siliconCompiler_modAInModB/actions>
@@ -70,7 +72,7 @@ clk_file = os.path.join(workdir, "top.sdc")                                     
 # Step 1: Create Verilog for module **A**
 # ---------------------------------------
 #
-# **A** is a simple AND gate with a registered output triggered by the clock.
+# **A** is a simple ``AND`` gate with a registered output triggered by the clock.
 #
 verilog_a = f"""
 module {A}(
@@ -96,7 +98,7 @@ with open(clk_file, "w") as f:
 # ----------------------------------------------
 #
 # The following code will build module **A** with the Silicon Compiler default
-# ASIC flow:
+# ``ASIC`` flow:
 #
 design_a = Design(A)
 
@@ -122,7 +124,7 @@ project_a.summary()
 # Step 3: Create a Macro Library Class from **A**
 # -----------------------------------------------
 #
-# Take the generated LEF, GDS, and Liberty files and package them into a
+# Take the generated ``LEF``, ``GDS``, and ``Liberty`` files and package them into a
 # custom library class so **A** can be instantiated as a hard macro.
 #
 # Define a class that inherits from the relevant tools and
@@ -177,7 +179,7 @@ with open(file_b, "w") as f:
 # --------------------------------------------------
 #
 # Configure Silicon Compiler to treat ``modA`` as an available macro
-# in the ASIC flow for **B**.
+# in the ``ASIC`` flow for **B**.
 #
 design_b = Design(B)
 
@@ -213,7 +215,7 @@ project_b.summary()
 # Conclusion
 # ----------
 #
-# This tutorial demonstrates how to perform a basic modular hierarchical ASIC design flow in
+# This tutorial demonstrates how to perform a basic modular hierarchical ``ASIC`` design flow in
 # Silicon Compiler by:
 #
 # - Hardening a leaf module **A**
