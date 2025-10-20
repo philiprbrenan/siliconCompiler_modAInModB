@@ -1,5 +1,8 @@
-import sys, subprocess
+import re, sys, subprocess
 from pathlib import Path
+
+INPUT = "top.py"
+RST   = "doc/source/index.rst"
 
 def script_to_rst(script_path, rst_path):
     """
@@ -45,7 +48,7 @@ def script_to_rst(script_path, rst_path):
 
     print(f"Converted {script_path} â {rst_path}")
 
-script_to_rst("top.py", "doc/source/modAInModB.rst")
+script_to_rst(INPUT, RST)
 
 result = subprocess.run(["make", "html"], cwd="doc", capture_output=True, text=True)
 
