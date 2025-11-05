@@ -1,4 +1,4 @@
-# Test 2025-11-05 at 19:38:16
+# Test 2025-11-05 at 19:40:03
 
 name: Test
 run-name: siliconCompiler_modAInModB
@@ -29,7 +29,7 @@ jobs:
 
     - name: Run Silicon compiler in a docker container
       run: |
-        docker run --rm -v ".:/workspace/verilog" ghcr.io/philiprbrenan/silicon_compiler_docker_image:0890fa2e60d6322611358f53bf1ff0d9b5e53926 bash -c "bash /workspace/verilog/top.exec"
+        docker run --rm -v ".:/workspace/verilog" ghcr.io/philiprbrenan/sc-asic:latest bash -c "bash /workspace/verilog/top.exec"
 
     - name: Upload all files as artifact
       uses: actions/upload-artifact@v4
